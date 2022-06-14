@@ -3,7 +3,7 @@
 
 ## Library Attendance System - Created by Computer Department(Hitanshu Rami,Preet Shah, Rashmil Panchani)
 
-#### 1. To start, click on Library_Attendance.exe
+#### 1. To start, click on Library/dist/Library_Attendance.exe
 #### 2. When the cursor is on the black screening keep on scanning the id card for entry 
 
 #### 3. To print of the current month just type 'p'.
