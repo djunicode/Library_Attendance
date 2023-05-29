@@ -19,7 +19,7 @@ def exportPdf(fileName, connectionObject):
     c.setFont('Helvetica', 12)
 
     databaseResults = connectionObject.fetchall()
-    labels = ["id: ", "SAP: ", "   Date: ", "   In: ", "   out: ", "is_in: "]
+    labels = ["id: ", "SAP: ", "   Date: ", "   In: ", "   Out: ", "is_in: "]
     y_pos = [x for x in range(700, 0, -30)]
     # print(databaseResults)
     for i, data in enumerate(databaseResults):
@@ -104,19 +104,19 @@ def main():
     sap_id = ""
 
     # A loop for endlessly taking input unless quit upon..
-    while sap_id is not "q":
+    while sap_id != "q":
         sap_id = input("Enter the SAP ID:")
         if sap_id != "q" and sap_id != "p" and sap_id != "r" and sap_id!="":
             data_entry(c, sap_id)
             # p = c.execute(retrieve_all_data)
             # print([row for row in p])
-        if sap_id is "p":
+        if sap_id == "p":
             str_date = datetime.now().strftime("%b-%Y")
             p = c.execute(retrieve_all_data)
             pdf_generation(str_date, p)
-        if sap_id is 'r':
-            name = input('Enter database month as (Aug-2019):')
-            if name is not 'q':
+        if sap_id == 'r':
+            name = input('Enter database month as (Aug-2023):')
+            if name != 'q':
                 file_name = "library-" + name + ".db"
                 conn = sqlite3.connect(file_name)
                 c = conn.cursor()
